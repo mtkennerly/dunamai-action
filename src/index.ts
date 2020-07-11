@@ -20,7 +20,7 @@ function main(): void {
         runCommand(`pip install dunamai==${install}`);
     }
 
-    const version = runCommand(`${command} ${args}`).toString();
+    const version = runCommand(`${command} ${args}`).toString().trim();
     core.setOutput("version", version);
     console.log(`Dynamic version: ${version}`);
 

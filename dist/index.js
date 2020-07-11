@@ -89,7 +89,7 @@ function main() {
     else {
         runCommand("pip install dunamai==" + install);
     }
-    var version = runCommand(command + " " + args).toString();
+    var version = runCommand(command + " " + args).toString().trim();
     core.setOutput("version", version);
     console.log("Dynamic version: " + version);
     if (envVar !== "") {

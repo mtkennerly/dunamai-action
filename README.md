@@ -13,7 +13,7 @@ This requires access to Python in the workflow.
 * `env-var` (optional, default: `""`):
   Name of environment variable in which to set the dynamic version.
   If this is empty, no environment variable will be set.
-* `command` (optional, default: `"dunamai from any"`)
+* `command` (optional, default: `"dunamai from any"`):
   Command to run Dunamai.
 * `args` (optional, default: `""`):
   Additional arguments to pass to the command.
