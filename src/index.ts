@@ -1,7 +1,7 @@
 const core = require("@actions/core");
 const { execSync } = require("child_process");
 
-function runCommand(command) {
+function runCommand(command: string): Buffer {
     console.log(`Running command: ${command}`);
     return execSync(command);
 }
@@ -12,12 +12,12 @@ function main() {
     const command = core.getInput("command");
     const args = core.getInput("args");
 
-    if (dunamaiVersion === "none") {
+    if (install === "none") {
         // No install.
-    } else if (dunamaiVersion === "latest") {
+    } else if (install === "latest") {
         runCommand("pip install dunamai");
     } else {
-        runCommand(`pip install dunamai==${dunamaiVersion}`);
+        runCommand(`pip install dunamai==${install}`);
     }
 
     const version = runCommand(`${command} ${args}`).toString();

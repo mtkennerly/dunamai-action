@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "outDir": "out",
+    "lib": [
+      "es5"
+    ],
+    "rootDir": "src",
+    "strict": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": [
+    "src/*.ts"
+  ]
+}
