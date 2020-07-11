@@ -1,12 +1,12 @@
-const core = require("@actions/core");
-const { execSync } = require("child_process");
+import * as core from "@actions/core";
+import { execSync } from "child_process";
 
 function runCommand(command: string): Buffer {
     console.log(`Running command: ${command}`);
     return execSync(command);
 }
 
-function main() {
+function main(): void {
     const install = core.getInput("install");
     const envVar = core.getInput("env-var");
     const command = core.getInput("command");

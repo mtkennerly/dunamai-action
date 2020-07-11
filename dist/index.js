@@ -64,15 +64,16 @@ module.exports = require("child_process");
 /***/ }),
 
 /***/ 325:
-/***/ (function(__unusedmodule, __unusedexports, __webpack_require__) {
+/***/ (function(__unusedmodule, exports, __webpack_require__) {
 
 "use strict";
 
+Object.defineProperty(exports, "__esModule", { value: true });
 var core = __webpack_require__(470);
-var execSync = __webpack_require__(129).execSync;
+var child_process_1 = __webpack_require__(129);
 function runCommand(command) {
     console.log("Running command: " + command);
-    return execSync(command);
+    return child_process_1.execSync(command);
 }
 function main() {
     var install = core.getInput("install");

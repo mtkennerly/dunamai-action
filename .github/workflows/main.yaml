@@ -13,6 +13,7 @@ jobs:
           python-version: '3.7'
       - uses: actions/checkout@v2
         with:
+          # This is necessary so that we have the tags.
           fetch-depth: 0
       - uses: ./
         with:
@@ -21,7 +22,13 @@ jobs:
       - run: echo $MY_VERSION
 
   complete:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - windows-latest
+          - macos-latest
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/setup-python@v2
         with:
@@ -30,9 +37,11 @@ jobs:
         with:
           fetch-depth: 0
       - uses: ./
+        id: dunamai
         with:
           install: '1.2.0'
           env-var: MY_VERSION
           command: dunamai from git
           args: --style semver
-      - run: echo $MY_VERSION
+      - run: echo $MY_VERSION from environment variable
+      - run: echo ${{ steps.dunamai.outputs.version }} from outputs
