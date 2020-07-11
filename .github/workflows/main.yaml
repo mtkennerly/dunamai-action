@@ -1,0 +1,38 @@
+on:
+  - push
+  - pull_request
+
+name: Main
+
+jobs:
+  example:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.7'
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: mtkennerly/dunamai-action@v1
+        with:
+          env-var: MY_VERSION
+          args: --style semver
+      - run: echo $MY_VERSION
+
+  complete:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.7'
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: mtkennerly/dunamai-action@v1
+        with:
+          install: '1.2.0'
+          env-var: MY_VERSION
+          command: dunamai from git
+          args: --style semver
+      - run: echo $MY_VERSION

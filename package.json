@@ -1,0 +1,13 @@
+{
+  "name": "dunamai-action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.2.4"
+  },
+  "devDependencies": {}
+}
