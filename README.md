@@ -3,6 +3,8 @@ This repository provides a GitHub Action that uses
 [Dunamai](https://github.com/mtkennerly/dunamai)
 to determine a dynamic version from your VCS tags.
 
+This requires access to Python in the workflow.
+
 ## Inputs
 * `install` (optional, default: `"latest"`):
   Version of Dunamai to install (e.g., "1.3.0").
