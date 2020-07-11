@@ -1,7 +1,10 @@
-name: Dunamai
+name: Run Dunamai
 description: |
   Use Dunamai to determine a dynamic version from your VCS tags.
   This requires access to Python in the workflow.
+branding:
+  icon: terminal
+  color: purple
 inputs:
   install:
     description: |
