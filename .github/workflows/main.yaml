@@ -43,5 +43,8 @@ jobs:
           env-var: MY_VERSION
           command: dunamai from git
           args: --style semver
-      - run: echo $MY_VERSION from environment variable
+      - if: matrix.os != 'windows-latest'
+        run: echo $MY_VERSION from environment variable
+      - if: matrix.os == 'windows-latest'
+        run: echo $env:MY_VERSION from environment variable
       - run: echo ${{ steps.dunamai.outputs.version }} from outputs

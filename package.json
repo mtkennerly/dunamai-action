@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dist": "ncc build src/index.ts"
+    "build": "ncc build src/index.ts --out public"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.2.4"
+    "@actions/core": "^1.2.6"
   },
   "devDependencies": {
     "@types/node": "^14.0.22",
