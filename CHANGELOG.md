@@ -1,3 +1,10 @@
+## Unreleased
+
+* Updated for Node.js 12 deprecation:
+  https://github.blog/changelog/2022-09-22-github-actions-all-actions-will-begin-running-on-node16-instead-of-node12/
+* Updated for `set-output` deprecation:
+  https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
+
 ## v1.1.0 (2020-10-08)
 
 * Updated for `set-env` deprecation:

@@ -39,7 +39,7 @@ jobs:
       - uses: ./
         id: dunamai
         with:
-          install: '1.2.0'
+          install: '1.13.2'
           env-var: MY_VERSION
           command: dunamai from git
           args: --style semver

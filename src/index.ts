@@ -33,5 +33,8 @@ function main(): void {
 try {
     main();
 } catch (error) {
-    core.setFailed(error.message);
+    core.setFailed(
+        // @ts-ignore
+        error.message
+    );
 }
