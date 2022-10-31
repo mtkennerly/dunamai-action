@@ -27,10 +27,10 @@ jobs:
   example:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v4
         with:
           python-version: '3.7'
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           # This is necessary so that we have the tags.
           fetch-depth: 0
