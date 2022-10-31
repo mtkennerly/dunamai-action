@@ -1,4 +1,4 @@
-## Unreleased
+## v1.2.0 (2022-10-31)
 
 * Updated for Node.js 12 deprecation:
   https://github.blog/changelog/2022-09-22-github-actions-all-actions-will-begin-running-on-node16-instead-of-node12/
