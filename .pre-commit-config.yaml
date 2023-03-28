@@ -9,11 +9,3 @@ repos:
     rev: v1.1.6
     hooks:
       - id: forbid-tabs
-  - repo: local
-    hooks:
-      - id: build
-        name: build
-        language: system
-        entry: npm run build
-        pass_filenames: false
-        files: '(\.(tsx?|jsx?)$|^package.json$|^tsconfig.json$)'

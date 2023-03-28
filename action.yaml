@@ -30,6 +30,10 @@ inputs:
 outputs:
   version:
     description: The dynamic version.
+    value: ${{ steps.main.outputs.version }}
 runs:
-  using: node16
-  main: public/index.js
+  using: composite
+  steps:
+    - id: main
+      shell: bash
+      run: python ${{ github.action_path }}/action.py
