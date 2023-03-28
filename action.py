@@ -23,13 +23,10 @@ def export_variable(name: str, value: str) -> None:
 def set_failed(error: Exception) -> None:
     print("::error::{}".format(error))
 
-    stdout = getattr(error, "stdout", None)
-    if stdout is not None:
-        print("stdout: {}".format(stdout.decode("utf-8").strip()))
-
-    stderr = getattr(error, "stderr", None)
-    if stderr is not None:
-        print("stderr: {}".format(stdout.decode("utf-8").strip()))
+    for stream_name in ["stdout", "stderr"]:
+        stream = getattr(error, stream_name, None)
+        if stream is not None:
+            print("{}: {}".format(stream_name, stream.decode("utf-8").strip()))
 
 
 def main() -> None:
