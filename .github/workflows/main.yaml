@@ -23,6 +23,7 @@ jobs:
           fetch-depth: 0
 
       - uses: ./
+        name: full invocation
         id: full
         with:
           install: '1.13.2'
@@ -36,5 +37,12 @@ jobs:
       - run: echo ${{ steps.full.outputs.version }} from outputs
 
       - uses: ./
+        name: minimal invocation
         id: minimal
       - run: echo ${{ steps.minimal.outputs.version }} from outputs
+
+      - uses: ./
+        name: invalid VCS
+        continue-on-error: true
+        with:
+          command: dunamai from incorrect
