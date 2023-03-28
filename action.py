@@ -43,7 +43,7 @@ def main() -> None:
     elif install == "latest":
         run_command("pip install dunamai")
     else:
-        run_command("pip install dunamai=={}", install)
+        run_command("pip install dunamai=={}".format(install))
 
     version = run_command("{} {}".format(command, args))
     set_output("version", version)
