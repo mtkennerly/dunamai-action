@@ -1,10 +1,11 @@
 import os
+import shlex
 import subprocess
 
 
 def run_command(command: str) -> str:
     print("Running command: {}".format(command))
-    result = subprocess.run(command, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    result = subprocess.run(shlex.split(command), check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     return result.stdout.decode("utf-8").strip()
 
 
