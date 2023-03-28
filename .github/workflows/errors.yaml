@@ -1,0 +1,30 @@
+on:
+  - workflow_dispatch
+
+name: Errors
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - windows-latest
+          - macos-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.7'
+      - uses: ./
+        name: before checkout
+        continue-on-error: true
+      - uses: actions/checkout@v3
+        with:
+          # This is necessary so that we have the tags.
+          fetch-depth: 0
+      - uses: ./
+        name: invalid VCS
+        continue-on-error: true
+        with:
+          command: dunamai from incorrect

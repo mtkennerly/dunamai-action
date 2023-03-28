@@ -21,8 +21,9 @@ jobs:
         with:
           # This is necessary so that we have the tags.
           fetch-depth: 0
+
       - uses: ./
-        id: dunamai
+        id: full
         with:
           install: '1.13.2'
           env-var: MY_VERSION
@@ -32,4 +33,8 @@ jobs:
         run: echo $MY_VERSION from environment variable
       - if: matrix.os == 'windows-latest'
         run: echo $env:MY_VERSION from environment variable
-      - run: echo ${{ steps.dunamai.outputs.version }} from outputs
+      - run: echo ${{ steps.full.outputs.version }} from outputs
+
+      - uses: ./
+        id: minimal
+      - run: echo ${{ steps.minimal.outputs.version }} from outputs
