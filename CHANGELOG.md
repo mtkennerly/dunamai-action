@@ -1,4 +1,4 @@
-## Unreleased
+## v1.3.0 (2023-03-28)
 
 * Rewrote as a composite action (which invokes a Python script) instead of a Node.js 16 action.
   There should be no observable changes in the action's usage or API.
