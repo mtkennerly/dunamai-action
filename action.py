@@ -11,13 +11,13 @@ def run_command(command: str) -> str:
 
 def set_output(name: str, value: str) -> None:
     with open(os.environ["GITHUB_OUTPUT"], "a") as file:
-        file.write(["{}={}\n".format(name, value)])
+        file.write("{}={}\n".format(name, value))
 
 
 def export_variable(name: str, value: str) -> None:
     print("Setting environment variable: {}".format(name))
     with open(os.environ["GITHUB_ENV"], "a") as file:
-        file.write(["{}={}\n".format(name, value)])
+        file.write("{}={}\n".format(name, value))
 
 
 def set_failed(error: Exception) -> None:
