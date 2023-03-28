@@ -37,3 +37,8 @@ runs:
     - id: main
       shell: bash
       run: python ${{ github.action_path }}/action.py
+      env:
+        INPUT_INSTALL: ${{ inputs.install }}
+        INPUT_ENV_VAR: ${{ inputs.env-var }}
+        INPUT_COMMAND: ${{ inputs.command }}
+        INPUT_ARGS: ${{ inputs.args }}
