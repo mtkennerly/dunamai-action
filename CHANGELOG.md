@@ -1,3 +1,8 @@
+## Unreleased
+
+* Rewrote as a composite action (which invokes a Python script) instead of a Node.js 16 action.
+  There should be no observable changes in the action's usage or API.
+
 ## v1.2.0 (2022-10-31)
 
 * Updated for Node.js 12 deprecation:
