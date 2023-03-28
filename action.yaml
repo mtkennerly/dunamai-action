@@ -36,9 +36,9 @@ runs:
   steps:
     - id: main
       shell: bash
-      working-directory: ${{ github.action_path }}
-      run: python action.py
+      run: python -m action
       env:
+        PYTHONPATH: ${{ github.action_path }}
         INPUT_INSTALL: ${{ inputs.install }}
         INPUT_ENV_VAR: ${{ inputs.env-var }}
         INPUT_COMMAND: ${{ inputs.command }}
